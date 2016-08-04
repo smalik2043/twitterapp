@@ -20,9 +20,9 @@ router.get('/', function (req, res, next) {
         console.log(error)
         if (!error) {
             console.log(tweets);
-            for (var i = 0; i < 10; i++) {
+            for (var i = 1; i <= 10; i++) {
                 var tweetsObj = {};
-                tweetsObj['tweet'] = tweets[i].text;
+                tweetsObj['tweet'+i] = tweets[i].text;
                 tweetArray.push(tweetsObj);
             }
             res.status(200).send(tweetArray);
