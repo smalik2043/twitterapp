@@ -26,6 +26,8 @@ router.get('/', function (req, res, next) {
                 tweetArray.push(tweetsObj);
             }
             res.status(200).send(tweetArray);
+        } else {
+            res.status(500).send(error);
         }
     });
 });
